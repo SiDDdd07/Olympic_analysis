@@ -100,7 +100,6 @@ if user_menu == 'Overall Analysis':
     heatmap_data = temp_df.pivot_table(index='Sport', columns='Year', values='Event', aggfunc='count')
     sns.heatmap(heatmap_data.fillna(0).astype(int), annot=True, ax=ax)
     st.pyplot(fig)
-    st.write("Columns in df:", df.columns.tolist())
     # Most successful athletes
     st.title("Most Successful Athletes")
     sport_list = df['Sport'].dropna().unique().tolist()
